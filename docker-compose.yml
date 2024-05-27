@@ -13,7 +13,7 @@ services:
       POSTGRES_USER: hoji_user
       POSTGRES_PASSWORD: root
   web:
-    container_name: Hojiakbar-bot-app-db
+    container_name: Hojiakbar-bot-app
     build: .
     restart: always
     ports:
