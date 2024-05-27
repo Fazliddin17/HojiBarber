@@ -1,0 +1,26 @@
+version: '3'
+services:
+  db:
+    container_name: HojiBarber-bot-app-db
+    image: postgres:15
+    ports:
+      - "5435:5432"
+    restart: always
+    volumes:
+      - /var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: hoji_db
+      POSTGRES_USER: hoji_user
+      POSTGRES_PASSWORD: root
+  web:
+    container_name: HojiBarber-bot-app-db
+    build: .
+    restart: always
+    ports:
+      - "8081:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/hoji_db
+      SPRING_DATASOURCE_USERNAME: hoji_user
+      SPRING_DATASOURCE_PASSWORD: root
