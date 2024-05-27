@@ -1,7 +1,7 @@
 version: '3'
 services:
   db:
-    container_name: HojiBarber-bot-app-db
+    container_name: Hojiakbar-bot-app-db
     image: postgres:15
     ports:
       - "5435:5432"
@@ -13,7 +13,7 @@ services:
       POSTGRES_USER: hoji_user
       POSTGRES_PASSWORD: root
   web:
-    container_name: HojiBarber-bot-app-db
+    container_name: Hojiakbar-bot-app-db
     build: .
     restart: always
     ports:
